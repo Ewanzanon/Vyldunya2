@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  background: #0b0714;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.magic-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 75%, rgba(65, 150, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(130, 50, 200, 0.16), transparent 35%),
+    linear-gradient(135deg, #07030d, #161025, #10201d);
+  animation: magicMove 9s infinite alternate ease-in-out;
+}
+
+@keyframes magicMove {
+  from {
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+  to {
+    transform: scale(1.08);
+    filter: hue-rotate(28deg);
+  }
+}
+
+/* ===== ACCUEIL ===== */
+
+.login-box {
+  width: min(450px, 90%);
+  margin: 90px auto;
+  padding: 35px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.72);
+  border: 2px solid gold;
+  border-radius: 24px;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.login-box h1 {
+  margin-top: 0;
+  color: gold;
+  font-size: 38px;
+}
+
+.subtitle {
+  color: #e8ddbc;
+  line-height: 1.4;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 16px 0;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, #ffe37a, #d59b24);
+  color: #1b1205;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.55);
+}
+
+.intro-button {
+  margin: 18px auto 10px;
+  display: inline-block;
+  font-size: 18px;
+  background: linear-gradient(135deg, #f6d78a, #b87827);
+}
+
+#message {
+  min-height: 24px;
+  color: #ff7777;
+  font-weight: bold;
+}
+
+/* ===== INTRODUCTION PARCHEMIN ===== */
+
+.intro-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.parchment {
+  position: relative;
+  z-index: 51;
+  width: min(980px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  margin: 40px auto;
+  padding: 45px;
+  color: #3b210c;
+  border-radius: 24px;
+  border: 5px solid #8a5a23;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.28), transparent 20%),
+    radial-gradient(circle at 70% 70%, rgba(120, 65, 20, 0.14), transparent 25%),
+    linear-gradient(135deg, #f3d99b, #d6ad63, #f1d28c);
+  box-shadow:
+    0 0 60px rgba(0, 0, 0, 0.75),
+    inset 0 0 35px rgba(85, 42, 5, 0.35);
+  animation: parchmentOpen 0.45s ease-out;
+}
+
+@keyframes parchmentOpen {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.parchment h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 42px;
+  color: #5c300d;
+}
+
+.parchment p {
+  font-size: 20px;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.close-intro {
+  position: sticky;
+  top: 0;
+  float: right;
+  padding: 8px 13px;
+  border-radius: 50%;
+  background: #7d2f16;
+  color: #fff2d0;
+}
+
+.map-zone {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.map-zone h3 {
+  margin-bottom: 18px;
+  color: #5c300d;
+  font-size: 32px;
+}
+
+.vildunya-map {
+  width: min(100%, 760px);
+  border: 6px solid #7b4b1d;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(70, 35, 10, 0.45);
+}
+
+/* ===== PAGES PERSONNAGES ===== */
+
+.character-page {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.character-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.character-header h1 {
+  margin: 0;
+  color: gold;
+  font-size: clamp(32px, 5vw, 58px);
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.35);
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.character-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 45px;
+}
+
+.character-card,
+.sheet-card {
+  background: rgba(0, 0, 0, 0.50);
+  border: 2px solid rgba(255, 215, 0, 0.75);
+  border-radius: 24px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.character-card {
+  width: 38%;
+  padding: 18px;
+  text-align: center;
+}
+
+.character-image {
+  width: 100%;
+  max-height: 760px;
+  object-fit: contain;
+  animation: floatCharacter 3.2s ease-in-out infinite;
+}
+
+@keyframes floatCharacter {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.sheet-card {
+  width: 52%;
+  padding: 8px;
+}
+
+iframe {
+  width: 100%;
+  height: 760px;
+  border: none;
+  border-radius: 16px;
+  background: white;
+}
+
+.info-section {
+  margin: 35px auto 0;
+  text-align: center;
+}
+
+.info-button {
+  font-size: 20px;
+}
+
+.info-text {
+  width: min(850px, 90%);
+  margin: 22px auto 0;
+  padding: 24px;
+  font-size: 21px;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.62);
+  border: 2px solid gold;
+  border-radius: 22px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.genty-theme .magic-background {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(80, 170, 255, 0.25), transparent 28%),
+    radial-gradient(circle at 85% 70%, rgba(0, 95, 200, 0.22), transparent 33%),
+    radial-gradient(circle at 50% 40%, rgba(255, 215, 0, 0.10), transparent 32%),
+    linear-gradient(135deg, #030914, #071a2f, #101426);
+}
+
+.rag-theme .magic-background {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255, 170, 50, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 72%, rgba(130, 65, 30, 0.22), transparent 32%),
+    radial-gradient(circle at 50% 45%, rgba(255, 215, 0, 0.12), transparent 34%),
+    linear-gradient(135deg, #090605, #1d130f, #251a10);
+}
+
+.mrd2-theme .magic-background {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(115, 230, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 70%, rgba(255, 230, 170, 0.18), transparent 30%),
+    radial-gradient(circle at 50% 44%, rgba(70, 120, 255, 0.18), transparent 32%),
+    linear-gradient(135deg, #050b13, #102132, #1b1b22);
+}
+
+.tristan-theme .magic-background {
+  background:
+    radial-gradient(circle at 22% 20%, rgba(255, 90, 40, 0.22), transparent 30%),
+    radial-gradient(circle at 80% 72%, rgba(255, 215, 0, 0.16), transparent 30%),
+    radial-gradient(circle at 55% 48%, rgba(130, 30, 20, 0.18), transparent 34%),
+    linear-gradient(135deg, #130704, #23100a, #2a1a10);
+}
+
+.lya-theme .magic-background {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(160, 220, 255, 0.26), transparent 30%),
+    radial-gradient(circle at 82% 72%, rgba(80, 130, 255, 0.20), transparent 32%),
+    radial-gradient(circle at 52% 45%, rgba(255, 255, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, #050916, #0b1f38, #15122b);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+  .character-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-card,
+  .sheet-card {
+    width: min(96%, 760px);
+  }
+
+  .back-button {
+    position: static;
+    margin-bottom: 18px;
+  }
+
+  .parchment {
+    padding: 28px;
+  }
+
+  .parchment p {
+    font-size: 18px;
+  }
+}

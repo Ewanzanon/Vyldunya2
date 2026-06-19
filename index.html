@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JDR N°2 : Vildunya 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="magic-background"></div>
+
+  <main class="login-box">
+    <h1>JDR N°2 : Vildunya 2</h1>
+    <p class="subtitle">Un monde ancien où les créatures, les royaumes oubliés et la magie vivent partout...</p>
+
+    <button class="intro-button" onclick="ouvrirIntroduction()">Introduction</button>
+
+    <input id="username" type="text" placeholder="Nom d'utilisateur" autocomplete="username" />
+    <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password" />
+
+    <button onclick="connexion()">Se connecter</button>
+    <p id="message"></p>
+  </main>
+
+  <section id="introModal" class="intro-modal" style="display:none;">
+    <div class="intro-overlay" onclick="fermerIntroduction()"></div>
+
+    <div class="parchment">
+      <button class="close-intro" onclick="fermerIntroduction()">✕</button>
+      <h2>Introduction</h2>
+
+      <p>
+        20 ans après la mort de Dumble, le château vit paisiblement sans plus trop de problème, nos 4 anciens héros ou plutôt nos 3 anciens héros car l’un d’eux était un traitre et est mort avec Dumble, vivent une nouvelle vie dans le château : Isidro est le nouveau roi, Ezraèl est retourné faire ses cours de chimie dans l’école la plus renommé du château jusqu’à partir seul car un cauchemar lui revenait chaque nuit et il a voulu s’assurer que ce cauchemar n’était pas une prédiction et depuis il n’a jamais été revu, enfin Albert créa sa propre école de magie. Et c’est dans cette école qu’on retrouve nos 4 nouveaux élèves inscrit dans la même classe de 1ère année. Dans cette classe la plus part son humain sauf 3 c’est pour cela que Rag et MRD2 son devenu vite ami tandis que Genty reste seul et que Tristan reste avec ses amis du 1er rang de la classe. Le dernier trimestre se fait en groupe, une mission leur ait donné et ils doivent partir à l’aventure, cette note est inévitable pour passer en 2ème année. C’est Albert qui fait les groupe et nos 4 perso se retrouvent ensemble, Albert leur donne un papier qui leur explique leur mission. Leur mission est d’aller arrêter un petit savant fou nommé Evrakys qui terrorise un village nommé Heos villar. Albert surveille chaque groupe mais il n’interviendra que s’ils lui demandent mais la note sera de 0/20. Alors arriverez vous a passez en 2ème année ?
+      </p>
+
+      <div class="map-zone">
+        <h3>La carte de Vildunya</h3>
+        <img src="carte_vildunya.jpg" alt="La carte de Vildunya" class="vildunya-map" />
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
